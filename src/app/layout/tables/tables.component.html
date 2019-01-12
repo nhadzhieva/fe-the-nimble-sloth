@@ -1,0 +1,30 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Your deliveries'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="card-body table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Reciever</th>
+                    <th>Status of the order</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Weight</th>
+                </tr>
+                </thead>
+                <tbody>
+                <ng-container *ngFor="let order of orders">
+                    <tr>
+                        <td>{{order.nameReciever}}</td>
+                        <td>{{order.status}}</td>
+                        <td>{{order.description}}</td>
+                        <td>{{order.price}} BGN</td>
+                        <td>{{order.weight}} KG </td>
+                    </tr>
+                </ng-container>
+                </tbody>
+            </table>           
+        </div>
+    </div>
+</div>
+

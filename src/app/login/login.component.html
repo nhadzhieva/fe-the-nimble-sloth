@@ -1,0 +1,28 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/sloth.png" width="150px"/>
+            <h1>The Nimble Sloth</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="loginWithEmail()">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input  formControlName="email" type="email" id="email"  class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="password" type="password" id="reppass"class="form-control input-underline input-lg"  placeholder="{{ 'Enter Password' | translate }}">
+                    </div>
+                </div>
+                <div *ngIf="error"class="form-control">{{error}}</div>
+                <div class="form-group">
+               
+                    <button type="submit" class="btn rounded-btn">{{ 'Log in' | translate }}</button>&nbsp;
+                    <button  class="btn rounded-btn"  [routerLink]="['/signup']" >{{ 'Register' | translate }}</button>
+
+                 </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>

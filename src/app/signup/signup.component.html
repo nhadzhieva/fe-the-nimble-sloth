@@ -1,0 +1,27 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/sloth.png" width="150px" />
+            <h1>The Nibmle Sloth</h1>
+            <form [formGroup]="signupForm"  (ngSubmit)="signUpWithEmail()" >
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text"  formControlName="name" id="name" class="form-control input-underline input-lg"  placeholder="{{ 'Full Name' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input  formControlName="email" type="email" id="email"  class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="password" type="password" id="reppass"class="form-control input-underline input-lg"  placeholder="{{ 'Enter Password' | translate }}">
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="password" id="reppass"class="form-control input-underline input-lg"  placeholder="{{ 'Repeat Password' | translate }}">
+                    </div> -->
+                </div>
+                <div *ngIf="error"class="form-control">{{error}}</div>
+                <button type="submit" class="btn rounded-btn" [disabled]="signupForm.pristine">{{ 'Register' | translate }}</button>&nbsp;
+                <!-- <button class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</button> -->
+            </form>
+        </div>
+    </div>
+</div>

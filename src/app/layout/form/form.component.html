@@ -1,0 +1,50 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Your request'" [icon]="'fa-edit'"></app-page-header>
+
+    <div >
+        <div >
+            <form [formGroup]="form" (ngSubmit)="send()">
+                <fieldset class="form-group">
+                    <label>Your Name</label>
+                    <input class="form-control" formControlName="nameSender" placeholder="Enter your name">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Address(coordinates)</label>
+                    <input class="form-control" formControlName="coordinatesSender" placeholder="Enter your coordinate address">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Reciever Name</label>
+                    <input class="form-control" formControlName="nameReciever" placeholder="Enter receiver's name">
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>Phone number of Reciever</label>
+                    <input class="form-control" formControlName="phoneReciver" placeholder="Enter receiver's phone here">
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Address(coordinates) of Reciever</label>
+                    <input class="form-control" formControlName="coordinatesReciever" placeholder="Enter  receiver's coordinate address">
+                </fieldset>             
+        
+                <fieldset class="form-group">
+                    <label>Description of the delivery</label>
+                    <textarea formControlName="description" class="form-control" rows="3"></textarea>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label>Price(BGN)</label>
+                    <input type="number" class="form-control" min="0" formControlName="price" placeholder="Price of the order" />
+                </fieldset> 
+                   <fieldset class="form-group">
+                    <label>Weight(KG)</label>
+                    <input type="number" min="0" class="form-control" formControlName="weight" placeholder="Weight of teh order">
+                </fieldset>   
+                <button type="submit" class="btn btn-secondary" [disabled]="form.pristine">Submit</button>
+                <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
+
+            </form>
+
+        </div>
+</div>
